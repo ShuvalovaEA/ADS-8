@@ -23,12 +23,12 @@ void Train::addCage(bool light) {
 
 int Train::getLength() {
     Cage *current = first;
-    int len = 0;
+    int length = 0;
     while (current != nullptr) {
         current = current->next;
-        len++;
+        length++;
     }
-    return len;
+    return length;
 }
 
 int Train::getOpCount() {
