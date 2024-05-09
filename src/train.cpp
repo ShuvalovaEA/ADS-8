@@ -22,7 +22,7 @@ void Train::addCage(bool light) {
 }
 
 int Train::getLength() {
-    Cage *current = first;
+    Cage* current = first;
     int length = 0;
     while (current != nullptr) {
         current = current->next;
