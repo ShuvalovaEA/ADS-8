@@ -8,11 +8,6 @@ Train::Train() {
     first->next = first;
     countOp = 0;
     length = 0;
-    while (first != nullptr) {
-        Cage* temp = first;
-        first = first->next;
-        delete temp;
-    }
 }
 
 void Train::addCage(bool light) {
