@@ -8,15 +8,23 @@ Train::Train() {
     first->next = first;
     countOp = 0;
     length = 0;
+    while (first != nullptr) {
+        Cage* temp = first;
+        first = first->next;
+        delete temp;
+    }
 }
 
 void Train::addCage(bool light) {
-    Cage* temp = first;
-    first = new Cage;
-    first->prev = temp;
-    first->next = temp->next;
-    first->next->prev = first;
-    first->light = light;
+    if (first == nullptr) {
+        first = new Cage{light, nullptr, nullptr};
+    } else {
+        Cage* temp = first;
+        first = new Cage{light, first, nullptr};
+        first->next->prev = first;
+        first->next = temp;
+        temp->prev = first;
+    }
     length++;
 }
 
